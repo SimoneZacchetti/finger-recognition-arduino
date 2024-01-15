@@ -4,7 +4,9 @@ import time
 import serial
 
 detector = HandDetector(maxHands=1, detectionCon=0.8)
+# if the webcam fails to start, try using VideoCapture(0)
 video = cv2.VideoCapture(1)
+# set the port connected to the arduino
 arduino = serial.Serial(port='/dev/cu.usbmodem101', baudrate=9600, timeout=.1)
 
 
